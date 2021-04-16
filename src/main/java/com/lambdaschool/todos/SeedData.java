@@ -1,5 +1,7 @@
 package com.lambdaschool.todos;
 
+
+import com.lambdaschool.todos.models.Todos;
 import com.lambdaschool.todos.models.User;
 import com.lambdaschool.todos.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,11 +42,11 @@ public class SeedData implements CommandLineRunner
             "password",
             "admin@lambdaschool.local");
         u1.getTodos()
-            .add(new Todos(u1,
-                "Give Joe access rights"));
+            .add(new Todos("Give Joe access rights",
+                    u1));
         u1.getTodos()
-            .add(new Todos(u1,
-                "Change the color of the home page"));
+            .add(new Todos("Change the color of the home page",
+                    u1));
 
         userService.save(u1);
 
@@ -52,14 +54,14 @@ public class SeedData implements CommandLineRunner
             "1234567",
             "cinnamon@lambdaschool.local");
         u2.getTodos()
-            .add(new Todos(u2,
-                "Take a nap"));
+            .add(new Todos("Take a nap",
+                    u2));
         u2.getTodos()
-            .add(new Todos(u2,
-                "Rearrange my hutch"));
+            .add(new Todos("Rearrange my hutch",
+                    u2));
         u2.getTodos()
-            .add(new Todos(u2,
-                "Groom my fur"));
+            .add(new Todos("Groom my fur",
+                    u2));
         userService.save(u2);
 
         // user
@@ -67,8 +69,8 @@ public class SeedData implements CommandLineRunner
             "ILuvM4th!",
             "barnbarn@lambdaschool.local");
         u3.getTodos()
-            .add(new Todos(u3,
-                "Rearrange my hutch"));
+            .add(new Todos("Rearrange my hutch",
+                    u3));
         userService.save(u3);
 
         User u4 = new User("puttat",
