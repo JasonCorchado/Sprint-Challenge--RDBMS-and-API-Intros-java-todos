@@ -168,7 +168,6 @@ public class User extends Auditable
         this.password = password;
     }
 
-//    Getter and Setter
 
     public List<Todos> getTodos() {
         return todos;
