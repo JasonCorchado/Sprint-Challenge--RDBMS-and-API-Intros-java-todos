@@ -63,8 +63,8 @@ public class TodosControllerIntegrationTest
             "testpassword",
             "test@email.com");
         newUser.getTodos()
-            .add(new Todos("testTodo",
-                    newUser));
+            .add(new Todos(newUser,
+                    "testTodo"));
         newUser = userService.save(newUser);
 
         mockMvc.perform(MockMvcRequestBuilders.patch("/todos/todo/{todoid}",

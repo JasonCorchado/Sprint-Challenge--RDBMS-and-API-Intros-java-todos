@@ -25,7 +25,7 @@ public class Todos extends Auditable{
     public Todos() {
     }
 
-    public Todos(String description, User user) {
+    public Todos(User user, String description) {
         this.description = description;
         this.user = user;
     }

@@ -31,7 +31,7 @@ public class TodosServiceImpl implements TodosService{
     @Override
     public Todos save(long userid, Todos newTodo) {
         User currentUser = userService.findUserById(userid);
-        Todos saveTodo = new Todos(newTodo.getDescription(), currentUser);
+        Todos saveTodo = new Todos(currentUser, newTodo.getDescription());
         todosRepos.save(saveTodo);
         return saveTodo;
     }
